@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <title>Ecomms Site</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     </head>
     <body>
@@ -13,10 +14,32 @@
             
         </header>
         <main>
-            <div id hero1>
-                <div class="product" >for image</div>
-                <div class="product">for image</div>
-                <div >Cart</div>
+            <div id="hero1" >
+                <div onmouseenter="footballHover()"  class="product" >
+                    <h2>Football</h2>
+                    <div id="fBallimg">
+                        <img id="ball" src="assets/football.jpg">
+                    </div>
+                </div>
+
+                <div onmouseenter="cricketBatHover()"  class="product" >
+                    <h2>Cricket Bat</h2>
+                    <div id="Cricketimg">
+                        <img id="cBat" src="assets/cricketbat.jpg">
+                    </div>
+
+                
+                <div >
+                    <h1>Analytics</h1>
+                    <p> Football:<span id="footballAnalytics"></span></p>
+                    <p> Cricket Bat:<span id="cricketBatAnalytics"></span></p>
+
+
+
+                </div>
+                <div id="chart">
+                    <canvas id="myChart" ></canvas>
+                </div>
             </div>
             <div> more</div>
         </main>

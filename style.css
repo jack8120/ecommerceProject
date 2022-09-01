@@ -37,18 +37,54 @@ main {
 
 #hero1 {
     border: 1px dashed pink;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
     
 }
 
 .product {
     border: 1px solid blueviolet;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 500px;
+    max-height: 500px;
 
 }
 
 
+#fBallimg{
+    max-width: 100px;
+    max-height: 100px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#Cricketimg{
+    max-width: 100px;
+    max-height: 100px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#ball{
+    width: 100%;
+}
+
+#cBat{
+    width: 100%;
+}
+
 .hero1 {
     border: 1px dashed red;
+}
+
+#chart {
+    border: 1px solid blue;
+    max-width: 500px;
+    max-height: 500px;
+    grid-column-start: 6;
+    grid-column-end: 7; 
+
 }
