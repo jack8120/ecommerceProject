@@ -1,0 +1,54 @@
+header {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    border: 1px solid black;
+    height: 80px;
+}
+
+#logo {
+    border: 1px solid red;
+    grid-column-start: 1;
+    grid-column-end: 2; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#title {border: 1px solid red;
+    grid-column-start: 4;
+    grid-column-end: 5; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+
+
+
+
+main {
+    border: 1px solid blue;
+}
+
+#hero1 {
+    border: 1px dashed pink;
+    display: flex;
+    
+}
+
+.product {
+    border: 1px solid blueviolet;
+    max-width: 300px;
+    max-height: 300px;
+
+}
+
+
+.hero1 {
+    border: 1px dashed red;
+}
