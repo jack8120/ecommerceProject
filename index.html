@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
-        <title>Ecomms Site</title>
+        <title>E-Commerce</title>
+        <link rel="stylesheet" href="Vstyles.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     </head>
     <body>
         <header>
-            
-                <div id="logo">logo</div>
-                <div id="title">Title</div>
-            
+            <h1 style="text-align: center;"> SportsGear </h1>
         </header>
         <main>
-            <div id="hero1" >
-                <div onmouseenter="footballHover()"  class="product" >
-                    <h2>Football</h2>
-                    <div id="fBallimg">
-                        <img id="ball" src="assets/football.jpg">
-                    </div>
-                </div>
 
-                <div onmouseenter="cricketBatHover()"  class="product" >
-                    <h2>Cricket Bat</h2>
-                    <div id="Cricketimg">
-                        <img id="cBat" src="assets/cricketbat.jpg">
-                    </div>
+            <container onmouseenter="tennisBatHover()" >
+                <img src="./assets/tennis_bat.jpg" alt="tennis bat.jpg" onclick="tennisOptions()"/>
+                <div id="showTennisOptionsHere"></div>
+            </container>
 
-                
-                <div >
-                    <h1>Analytics</h1>
-                    <p> Football:<span id="footballAnalytics"></span></p>
-                    <p> Cricket Bat:<span id="cricketBatAnalytics"></span></p>
+            <container onmouseenter="cricketBatHover()">
+                <img src="./assets/cricket_bat.jpg" alt="cricket bat.jpg" onclick="cricketOptions()"/>
+                <div id="showCricketOptionsHere"></div>
+            </container>
 
+            <cart>
+                <h1>Analytics</h1>
+                <p>Tennis Bat:<span id="tennisBatAnalytics"></span></p>
+                <p>Cricket Bat:<span id="cricketBatAnalytics"></span></p>
+                <analytics>
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </analytics>
+                <hr>
+                <h1>Cart</h1>
+                <p>Products:<br/><span id="products"></span></p>
+                <p>Items:<span id="items"></span></p>
+                <p>Price:<span id="price"></span></p>
+            </cart>
 
+            
 
-                </div>
-                <div id="chart">
-                    <canvas id="myChart" ></canvas>
-                </div>
-            </div>
-            <div> more</div>
         </main>
-
         <!-- Scripts -->
         <script src="Vapp.js"></script>
     </body>
 </html>
+
+
+
+
+
+
