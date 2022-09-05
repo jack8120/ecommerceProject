@@ -1,66 +1,124 @@
 'use strict'
 
-//console.log('check')
-// Event record interest in item with on mouse enter
+//console.log('Check')
+// Event? --> on hovering the product I want the number of times I have done
+
+let tennisBatCounter = 0;
+let cricketBatCounter = 0;
+
+// products cart details
+let productsSelection = [
+    
+    {name:'Tennis Bat',tennisBatSelectionCounter:0},
+    {name:'Cricket Bat',cricketBatSelectionCounter:0},
+]
+
+let itemsElement = document.getElementById('items');
 
 
-let footballcounter = 0;
-let cricketBatcounter = 0;
+// function for tennis bat hover
 
-//function for item hover
-
-let footballElement = document.getElementById('footballAnalytics');
+let tennisBatElement = document.getElementById('tennisBatAnalytics');
 let cricketBatElement = document.getElementById('cricketBatAnalytics');
 
-//initial render
-footballElement.innerHTML = footballcounter;
-cricketBatElement.innerHTML = cricketBatcounter;
+// Initial render
+tennisBatElement.innerHTML = tennisBatCounter;
+cricketBatElement.innerHTML = cricketBatCounter;
 
-function footballHover(){
-    footballcounter++;
-    footballElement.innerHTML = footballcounter;
+function tennisBatHover(){
+    tennisBatCounter++;
+    showData();
+    tennisBatElement.innerHTML = tennisBatCounter;
 }
 
 function cricketBatHover(){
-    cricketBatcounter++;
-    cricketBatElement.innerHTML = cricketBatcounter;
+    cricketBatCounter++;
+    showData();
+    cricketBatElement.innerHTML = cricketBatCounter;
 }
 
-// Canvas Charts
-
-
-  const labels = [
-    'Football',
-    'Cricket Bat',
-
-  function showData(){
-    if(render)
-
-
-  }  
-    
+// Canvas
+const labels = [
+    'Tennis Bat',
+    'Cricket Bat'
   ];
+let renderChart;
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'Footballs Vs Cricket Bats',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [tennisBatCounter, cricketBatcounter],
-    }]
-  };
+function showData(){
 
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
+    if(renderChart){
+        renderChart.destroy();
+    }
+    const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Sports Gear Analytics',
+          backgroundColor: ['rgb(255, 99, 132)','rgb(20,189,222)'],
+          borderColor: 'rgb(255, 99, 132)',
+          data: [tennisBatCounter, cricketBatCounter],
+        }]
+      };
+    
+      const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+      };
+    
+      renderChart = new Chart(
+        document.getElementById('myChart'),config
+      );
+}
 
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
+let elementShowTennisOptionsHere = document.getElementById('showTennisOptionsHere');
+function check(){
+    alert('checked');
+}
+function buyTennis(){
+    
+    productsSelection[0].tennisBatSelectionCounter++;
+    itemsElement.innerHTML = productsSelection[0].tennisBatSelectionCounter;
+}
 
-// Card interactivity
+function buyCricket(){
 
+    productsSelection[1].cricketBatSelectionCounter++;
+    itemsElement.innerHTML = productsSelection[1].cricketBatSelectionCounter;
+
+}
+// cart stuff
+function tennisOptions(){
+
+    // create new div element
+    let newElement = document.createElement('div');
+
+    // add calss
+    newElement.classList.add('newElement');
+
+
+    // create new button element for view details
+    let newBtnElement = document.createElement('button');
+
+    // add some content
+    newBtnElement.textContent = "View Details";
+
+    // add event listener
+    newBtnElement.addEventListener("click",check);
+
+    // create new button element for buying
+    let newBtnElement2 = document.createElement('button');
+
+    // add some content
+    newBtnElement2.textContent = "Buy Now";
+
+    // add event listener
+    newBtnElement2.addEventListener("click",buyTennis);
+
+    // append the button element to the new element div
+    newElement.appendChild(newBtnElement);
+    newElement.appendChild(newBtnElement2);
+
+    // append child to the div element
+    elementShowTennisOptionsHere.appendChild(newElement);
+    
+}
