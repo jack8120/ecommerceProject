@@ -14,10 +14,11 @@ header,main{
 }
 
 container{
-    height:auto;
+    max-height: 500px;
     max-width: 400px;
     padding:10px;
-    background-color: red;
+    background-color: black;
+
 }
 
 img{
@@ -28,6 +29,17 @@ img{
     max-height: 400px;
     min-height: 400px;
     box-shadow: 10px 10px 5px #aaaaaa;
+
+    /* individual transform values */
+
+    /* transform: rotate(-45deg);
+    transform: scaleX(.5);
+    transform: translate(300px, -200px);
+    transform: skew(-120deg); */
+
+    /*combined transform values*/
+
+    /* transform: rotate(50deg) translate(-20%, -15%) skew(15deg); */
 }
 
 cart{
